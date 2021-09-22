@@ -1,1 +1,1 @@
-# IT-LABS
+# Course LABS
