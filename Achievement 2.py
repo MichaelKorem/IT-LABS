@@ -1,13 +1,13 @@
 x = 0
+x = str(input("Please enter one capital or low key letter "))
 len (x)
 1
-x = str(input("Please enter a capital or low key letter "))
 
 if x.isupper ():
-    print (x.lower)
+    print ("Your letter was changed to lower case: " + x.lower ())
 
 elif x.islower ():
-    print (x.upper)
+    print ("Your letter was changed to upper case: " + x.upper ())
 
 else:
     print ("Incorrect value was entered")
