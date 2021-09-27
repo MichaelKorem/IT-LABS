@@ -52,3 +52,7 @@ else:
     exit ()
 
 amount = int(input("How many shirts would you like to purchase: "))
+price = round((amount*9.99*1.13),2)
+
+print ("You have ordered " + str(amount) + " " + color + " " + type + " shirts.")
+print ("Amount to pay including HST is: " + str(price) + "$")
