@@ -36,6 +36,19 @@ else:
     print ("Incorrect value was entered")
     exit ()
 
+print ("What type of shirt would you like to buy?")
+type = str(input("Type 1 for Polo. Type 2 for T-shirt: "))
 
+if type ==  "1":
+    type = "Polo"
+    print ("Thank you. The chosen shirt type is " + type)
 
+elif type ==  "2":
+     type = "T-shirt"
+     print ("Thank you. The chosen shirt type is " + type)
 
+else:
+    print ("Incorrect value was entered")
+    exit ()
+
+amount = int(input("How many shirts would you like to purchase: "))
