@@ -6,55 +6,67 @@ trousertype = 0
 trouseramount = 0
 
 print ("Welcome to Abby’s Merchandizing!")
+print("""What type of shirt would you like to order?
+1. Polo - 9.99$ 2. T-shirt - 9.99$""")
 
-while shirttype <= 0:
-    print("""What type of shirt would you like to order?
-    1. Polo - 9.99$ 2. T-shirt - 9.99$""")
-    shirttype = str(input("Type 1 for Polo. Type 2 for T-shirt: "))
+while True:
+    try:
+        shirttype = int(input("Type 1 for Polo. Type 2 for T-shirt: "))
+        if shirttype == 1:
+            shirttype = str("Polo")
+            print ("Thank you. The chosen shirt type is " + shirttype)
+            break
+        elif shirttype == 2:
+            shirttype = str("T-shirt")
+            print ("Thank you. The chosen shirt type is " + shirttype)
+            break
+        else:
+            print ("Incorrect value was entered. Please try again.")
+            continue
 
-    if shirttype ==  "1":
-        shirttype = "Polo"
-        print ("Thank you. The chosen shirt type is " + shirttype)
+    except ValueError:
+        print ("Incorrect value was entered. Please try again.")
+        continue
 
-    elif shirttype ==  "2":
-        shirttype = "T-shirt"
-        print ("Thank you. The chosen shirt type is " + shirttype)
 
-    else:
+while shirtcolour > 1 or shirtcolour <= 6:
+    try:
+        print("""What colour of shirt would you like to order?
+        1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
+        shirtcolour = str(input("Please pick the number adjacent to the preferred colour: "))
+    except ValueError:
         print ("Incorrect value was entered. Please try again.")
 
-while shirtcolour <= 0:
-    print("""What colour of shirt would you like to order?
-    1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
-    shirtcolour = str(input("Please pick the number adjacent to the preferred colour: "))
+        if shirtcolour ==  "1":
+            shirtcolour = "White"
+            print ("Thank you. The chosen colour is " + shirtcolour)
+            break
 
-    if shirtcolour ==  "1":
-        shirtcolour = "White"
-        print ("Thank you. The chosen colour is " + shirtcolour)
+        elif shirtcolour ==  "2":
+            shirtcolour = "Black"
+            print ("Thank you. The chosen colour is " + shirtcolour)
+            break
 
-    elif shirtcolour ==  "2":
-        shirtcolour = "Black"
-        print ("Thank you. The chosen colour is " + shirtcolour)
+        elif shirtcolour ==  "3":
+            shirtcolour = "Red"
+            print ("Thank you. The chosen colour is " + shirtcolour)
+            break
 
-    elif shirtcolour ==  "3":
-        shirtcolour = "Red"
-        print ("Thank you. The chosen colour is " + shirtcolour)
+        elif shirtcolour == "4":
+            shirtcolour = "Blue"
+            print ("Thank you. The chosen colour is " + shirtcolour)   
+            break
 
-    elif shirtcolour == "4":
-        shirtcolour = "Blue"
-        print ("Thank you. The chosen colour is " + shirtcolour)   
+        elif shirtcolour ==  "5":
+            shirtcolour = "Green"
+            print ("Thank you. The chosen colour is " + shirtcolour)
+            break
 
-    elif shirtcolour ==  "5":
-        shirtcolour = "Green"
-        print ("Thank you. The chosen colour is " + shirtcolour)
+        elif shirtcolour ==  "6":
+            shirtcolour = "Yellow"
+            print ("Thank you. The chosen colour is " + shirtcolour)
+            break
 
-    elif shirtcolour ==  "6":
-        shirtcolour = "Yellow"
-        print ("Thank you. The chosen colour is " + shirtcolour)
-
-    else:
-        print ("Incorrect value was entered. Please try again.")
-    
 shirtamount = int(input("How many shirts would you like to order: "))
 shirtprice = round((shirtamount*9.99*1.13),2)
 
