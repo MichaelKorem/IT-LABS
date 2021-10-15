@@ -4,6 +4,8 @@ shirtamount = 0
 trousercolour = 0
 trousertype = 0
 trouseramount = 0
+sydiscount = 1
+qdiscount = 1
 
 print ("Welcome to Abby’s Merchandizing!")
 print("""What type of shirt would you like to order?
@@ -141,9 +143,28 @@ while True:
         print ("Incorrect value was entered. Please try again.")
         continue
 
+while True:
+    sydiscount = input("Are you a senior citizen? Y/N ")
 
-shirtprice = round((shirtamount*9.99*1.13),2)
-trouserprice = round((trouseramount*14.99*1.13),2)
+    if sydiscount.isalpha ():
+        if sydiscount == "y" or sydiscount == "Y":
+            float(sydiscount) == 0.1
+            break
 
-print ("You have ordered " + str(shirtamount) + " " + shirtcolor + " " + shirttype + " shirts.")
+        elif sydiscount == "n" or sydiscount == "N":
+            int(sydiscount) == 0
+            break
+
+        else:
+            int(sydiscount) == 1  #error here
+            print ("Incorrect value was entered. Please try again.")
+            continue
+    else:
+        print ("Incorrect value was entered. Please try again.")
+        continue
+
+shirtprice = round((shirtamount*9.99),2)
+trouserprice = round((trouseramount*14.99),2)
+
+print ("You have ordered " + str(shirtamount) + " " + shirtcolour + " " + shirttype + " shirts.")
 print ("Amount to pay including HST is: " + str(shirtprice) + "$")
