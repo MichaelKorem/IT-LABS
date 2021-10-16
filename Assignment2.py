@@ -4,8 +4,10 @@ shirtamount = 0
 trousercolour = 0
 trousertype = 0
 trouseramount = 0
+sytype = 0
 sydiscount = 1
-qdiscount = 1
+qdiscountshirt = 0
+qdiscounttrouser = 0
 
 print ("Welcome to Abby’s Merchandizing!")
 print("""What type of shirt would you like to order?
@@ -143,28 +145,54 @@ while True:
         print ("Incorrect value was entered. Please try again.")
         continue
 
-while True:
-    sydiscount = input("Are you a senior citizen? Y/N ")
+counter = ["Y", "y", "N", "n"]
+x = 0
+while x < len(counter):
+    sytype = input("Are you a senior citizen? Y/N ")
 
-    if sydiscount.isalpha ():
-        if sydiscount == "y" or sydiscount == "Y":
-            float(sydiscount) == 0.1
-            break
-
-        elif sydiscount == "n" or sydiscount == "N":
-            int(sydiscount) == 0
-            break
-
-        else:
-            int(sydiscount) == 1  #error here
-            print ("Incorrect value was entered. Please try again.")
-            continue
-    else:
+    if counter[x] != sytype:
+        x += 1
         print ("Incorrect value was entered. Please try again.")
         continue
+    else:
+        break
+
+if sytype == "y" or sytype == "Y":
+    float(sydiscount) = 0.1
+    sytype = "Senior citizen"
+
+elif sytype == "n" or sytype == "N":
+    x = 0
+    
+    while x < len(counter):
+        sytype = input("Are you a student? Y/N ")
+
+        if counter[x] != sytype:
+            x += 1
+            print ("Incorrect value was entered. Please try again.")
+            continue
+        else:
+            break
+
+if sytype == "y" or sytype == "Y":
+    float(sydiscount) = 0.1
+    sytype = "Student"
 
 shirtprice = round((shirtamount*9.99),2)
 trouserprice = round((trouseramount*14.99),2)
 
-print ("You have ordered " + str(shirtamount) + " " + shirtcolour + " " + shirttype + " shirts.")
+print ("You have ordered " + str(shirtamount) + " " + shirtcolour + " " + shirttype + " shirts")
+print ("and " + str(trouseramount) + " " + trousercolour + " " + trousertype + " trousers.")
+print ("total price is : " + str(shirtprice+trouserprice) + "$")
+
+if shirtamount >= 3:
+    float(qdiscountshirt) = 0.15
+
+if trouseramount >= 3:
+    float(qdiscounttrouser) = 0.15
+
+if qdiscountshirt > 0 or qdiscounttrouser > 0:
+    print ("Quantity discount is: ", + (qdiscountshirt*shirtamount)+(qdiscounttrouser*trouseramount))
+
+if sydiscount > qdiscountshirt
 print ("Amount to pay including HST is: " + str(shirtprice) + "$")
