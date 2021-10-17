@@ -1,12 +1,8 @@
-shirtcolour = 0
-shirttype = 0
-shirtamount = 0
-trousercolour = 0
-trousertype = 0
-trouseramount = 0
 sytype = 0
 qdiscountshirt = 0
 qdiscounttrouser = 0
+sydiscounttrouser = 0
+sydiscountshirt = 0
 x = 0
 y = 0
 total = 0
@@ -70,11 +66,13 @@ while True:
             break
 
         else:
-            print ("Incorrect value was entered. Please try again.")
+            print ("""Incorrect value was entered. Please try again.
+1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
             continue
 
     except ValueError:
-        print ("Incorrect value was entered. Please try again.")
+        print ("""Incorrect value was entered. Please try again.
+1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
         continue
 
 while True:
@@ -106,8 +104,8 @@ while True:
             continue
 
     except ValueError:
-        print ("Incorrect value was entered. Please try again.")
-        continue
+         print ("Incorrect value was entered. Please try again.")
+         continue
 
 print ("""What colour of trousers would you like to order?
 1. Blue 2. Black 3. Grey""")
@@ -132,11 +130,13 @@ while True:
             break
 
         else:
-            print ("Incorrect value was entered. Please try again.")
+            print ("""Incorrect value was entered. Please try again.
+1. Blue 2. Black 3. Grey""")
             continue
 
     except ValueError:
-        print ("Incorrect value was entered. Please try again.")
+        print ("""Incorrect value was entered. Please try again.
+1. Blue 2. Black 3. Grey""")
         continue
 
 while True:
@@ -155,7 +155,8 @@ while sytype == 0:
         break
 
     else:
-        print("Incorrect value was entered. Please try again.")
+        print("""Incorrect value was entered. Please try again.
+Are you a senior citizen? Y/N """)
         sytype = 0
         continue
 
@@ -173,7 +174,8 @@ else:
         if sytype in counter:
             break
         else:
-            print("Incorrect value was entered. Please try again.")
+            print("""Incorrect value was entered. Please try again.
+Are you a student? Y/N """)
             sytype = 0
             continue
 
@@ -185,7 +187,11 @@ if sytype == "y" or sytype == "Y":
 shirtprice = format((shirtamount*9.99), ".2f")
 trouserprice = format((trouseramount*14.99), ".2f")
 
-print ("You have ordered " + str(shirtamount) + " " + shirtcolour + " " + shirttype + " shirts and " + str(trouseramount) + " " + trousercolour + " " + trousertype + " trousers.")
+print ("""
+Summary:
+_____________________________________________________________
+
+You have ordered """ + str(shirtamount) + " " + shirtcolour + " " + shirttype + " shirts and " + str(trouseramount) + " " + trousercolour + " " + trousertype + " trousers.")
 total = float(shirtprice) + float(trouserprice)
 total = format(total, ".2f")
 print ("Amount to pay before tax is: " + str(total) + "$")
@@ -202,7 +208,7 @@ if qdiscountshirt > 0 or qdiscounttrouser > 0:
     sum = qdiscountshirt * float(shirtprice)
     sum += qdiscounttrouser * float(trouserprice)
     sum = format(sum, ".2f")
-    print ("Quantity discount is: " + str(sum) + "$")
+    print ("Quantity discount is: -" + str(sum) + "$")
 
 if sydiscountshirt > qdiscountshirt:
     x = format((float(shirtprice)*sydiscountshirt), ".2f")
@@ -211,7 +217,7 @@ if sydiscounttrouser > qdiscounttrouser:
 
 if sydiscountshirt > 0 or sydiscounttrouser > 0:
     sum = float(x)+float(y)
-    print (sytype + " discount is: " + str(sum) + "$")
+    print (sytype + " discount is: -" + str(sum) + "$")
 
 price = float(shirtprice)*(1-qdiscountshirt-sydiscountshirt)+float(trouserprice)*(1-qdiscounttrouser-sydiscounttrouser)
 hst = float(price)*0.13
