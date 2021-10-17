@@ -30,7 +30,7 @@ while True:
         print ("Incorrect value was entered. Please try again.")
         continue
 
-print("""What colour of shirt would you like to order?
+print("""What color of shirt would you like to order?
 1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
 while True:
     try: 
@@ -107,7 +107,7 @@ while True:
          print ("Incorrect value was entered. Please try again.")
          continue
 
-print ("""What colour of trousers would you like to order?
+print ("""What color of trousers would you like to order?
 1. Blue 2. Black 3. Grey""")
 
 while True:
