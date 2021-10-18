@@ -155,8 +155,7 @@ while sytype == 0:
         break
 
     else:
-        print("""Incorrect value was entered. Please try again.
-Are you a senior citizen? Y/N """)
+        print("Incorrect value was entered. Please try again.")
         sytype = 0
         continue
 
@@ -174,8 +173,7 @@ else:
         if sytype in counter:
             break
         else:
-            print("""Incorrect value was entered. Please try again.
-Are you a student? Y/N """)
+            print("Incorrect value was entered. Please try again.")
             sytype = 0
             continue
 
