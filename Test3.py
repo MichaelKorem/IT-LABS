@@ -3,15 +3,34 @@ class Temperature:
         self.name = name
         self.temp = []
 
-    def insertTemp(self):
-        for i in range(3):
-            m = int(input("Enter the temperature in %s on day %d :"%(self.name,i+1)))
-            self.temp.append(m)
+    def EnterTemp(self):
+        for n in range(3):
+            m = float(input("Enter the temperature in %s on day %d :"%(self.name,n+1)))
+            m = format((m), ".1f")
+            self.temp.append(float(m))
     
-    def PrintTemp(self):
-        print(self.name, " recorded the following temperatures ", self.temp)
+    def DisplayTemp(self):
+        print(self.name, "recorded the following temperatures", self.temp)
 
-    def CalcAverage(self):
+    def CalcAverageTemp(self):
         x = sum(self.temp)
         average = x/len(self.temp)
-        print("The average temperature for %s across these days was: " %str(self.name),str(average))
+        average = format((average), ".1f")
+        print("The average temperature for %s across these days was:" %str(self.name),str(average))
+
+measure1 = Temperature("Toronto")
+measure1.EnterTemp()
+
+measure2 = Temperature("Vancouver")
+measure2.EnterTemp()
+
+measure3 = Temperature("Montreal")
+measure3.EnterTemp()
+
+measure1.DisplayTemp()
+measure2.DisplayTemp()
+measure3.DisplayTemp()
+
+measure1.CalcAverageTemp()
+measure2.CalcAverageTemp()
+measure3.CalcAverageTemp()
