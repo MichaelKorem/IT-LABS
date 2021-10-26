@@ -1,4 +1,6 @@
-vocabulary = ["absurd", "awkward", "bandwagon", "bookworm", "espionage", "funny", "galaxy", "gazebo", "gossip", "injury", "jazz", "jigsaw", "jukebox", "keyhole", "length", "lucky", "luxury", "matrix", "oxygen", "pixel", "puzzling", "quiz", "rhubarb", "strength", "stronghold", "transcript", "unknown", "wizard", "wristwatch", "zipper"]
+vocabulary = ["ABSURD", "AWKWARD", "BANDWAGON", "BOOKWORM", "ESPIONAGE", "FUNNY", "GALAXY", "GAZEBO", "GOSSIP", "INJURY", "JAZZ", "JIGSAW", "JUKEBOX", "KEYHOLE", "LENGTH", "LUCKY", "LUXURY", "MATRIX", "OXYGEN", "PIXEL", "PUZZLING", "QUIZ", "RHUBARB", "STRENGTH", "STRONGHOLD", "TRANSCRIPT", "UNKNOWN", "WIZARD", "WRISTWATCH", "ZIPPER"]
+counter = 1
+wordpresent = ["*"]
 
 m1 = ("""
 
@@ -49,6 +51,17 @@ m7 = ("""_______
 |    / \ 
 |
 ^^^^^^^^""")
+
+import random
+x = random.randint(0, 30)
+
+word = vocabulary(x)
+wordlist = list(word)
+
+while counter < len(wordlist):
+    wordpresent.append("*")
+
+
 
 print(m1)
 print(m2)

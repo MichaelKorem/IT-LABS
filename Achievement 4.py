@@ -1,34 +1,69 @@
-print("""What type of mathematical operation would you like to perform?
+class Math:
+    def __init__(self, name):
+        self.name = name
+        self.num = []
+    
+    def Operation(self):
+        print("""What type of mathematical operation would you like to perform?
 Press 1 for Addition 
 Press 2 for Subtraction 
 Press 3 for Multiplication 
 Press 4 for Division 
 Press 5 for Modulus Division.""")
 
-while True:
-    try:
-        op = int(input("Your choice is: "))
-        if op == 1:
-            print ("Thank you. The chosen shirt type is Addition")
-            break
-        elif op == 2:
-            print ("Thank you. The chosen shirt type is Substraction")
-            break
-        elif op == 3:
-            print ("Thank you. The chosen shirt type is Multiplication")
-            break
-        elif op == 4:
-            print ("Thank you. The chosen shirt type is Division")
-            break
-        elif op == 5:
-            print ("Thank you. The chosen shirt type is Modulus Division")
-            break
-        else:
-            print ("Incorrect value was entered. Please try again.")
-            continue
+        while True:
+            try:
+                self.name = int(input("Your choice is: "))
+                if self.name == 1:
+                    self.name = str("Addition")
+                    break
+                elif self.name == 2:
+                    self.name = str("Substraction")
+                    break
+                elif self.name == 3:
+                    self.name = str("Multiplication")
+                    break
+                elif self.name == 4:
+                    self.name = str("Division")
+                    break
+                elif self.name == 5:
+                    self.name = str("Modulus Division")
+                    break
+                else:
+                    print ("Incorrect value was entered. Please try again.")
+                    continue
 
-    except ValueError:
-        print ("Incorrect value was entered. Please try again.")
-        continue
+            except ValueError:
+                print ("Incorrect value was entered. Please try again.")
+                continue
 
-        
+        print ("Thank you. The chosen operation is" + self.name)
+
+        while True:
+            try: 
+                x = int(input("Please pick the first number: "))
+                y = int(input("Please pick the second number: "))
+                self.num.append(int(x))
+                self.num.append(int(y))
+            
+            except ValueError:
+                print ("Incorrect value was entered. Please try again.")
+                continue
+
+    def CalcAddition(self):
+        print(sum(self.num))
+
+    def CalcSubstraction(self):
+        print(sum(self.num))
+
+    def CalcMultiplication(self):
+        print(sum(self.num))
+
+    def CalcDivision(self):
+        print(sum(self.num))
+
+    def CalcModDivision(self):
+        print(sum(self.num))
+
+
+      
