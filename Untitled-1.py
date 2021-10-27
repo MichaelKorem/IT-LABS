@@ -1,4 +1,7 @@
 class Math:
+    def __init__(self):
+        self.num = []
+
     def CalcAddition(self):
         print(x+y)
 
