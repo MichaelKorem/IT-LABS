@@ -54,16 +54,24 @@ Press 5 for Modulus Division.""")
         print(sum(self.num))
 
     def CalcSubstraction(self):
-        print(sum(self.num))
+        sub = self.num(0)-self.num(1)
+        print(sub)
 
     def CalcMultiplication(self):
-        print(sum(self.num))
+        mult = self.num(0)*self.num(1)
+        print(mult)
 
     def CalcDivision(self):
-        print(sum(self.num))
+        div = self.num(0)/self.num(1)
+        div = format(div, ".2f")
+        print(div)
 
     def CalcModDivision(self):
-        print(sum(self.num))
+        mod = self.num(0)%self.num(1)
+        mod = format(mod, ".2f")
+        print(mod)
+
+
 
 
       
