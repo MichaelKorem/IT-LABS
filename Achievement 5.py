@@ -3,7 +3,7 @@ source = "Lorem ipsum doflor szit ametß, consqecytetu$r adipibsching elit, sed 
 class Characters:
     def CountName(self):
         x = source.count('M')+source.count('m')
-        print("Found ", str(x), " matches of the letter M")
+        print("Found", str(x), "matches of the letter M")
 
     def CountNum(self):
         counter = 0
@@ -12,7 +12,7 @@ class Characters:
                 counter +=1
             else:    
                pass       
-        print("Found ", str(counter), " matches of the digits")
+        print("Found", str(counter), "matches of digits")
 
     def CountAlNum(self):
         counter = 0
@@ -21,7 +21,7 @@ class Characters:
                 counter +=1
             else:    
                pass       
-        print("Found ", str(counter), " matches of the alpha-numeric characters")
+        print("Found", str(counter), "matches of alphanumeric characters")
 
 
     def CountNonAlNum(self):
@@ -31,7 +31,13 @@ class Characters:
                 counter +=1
             else:    
                pass       
-        print("Found ", str(len(source)-counter), " matches of the non alpha-numeric characters")
+        print("Found", str(len(source)-counter), "matches of non-alphanumeric characters")
 
     def CountSpace(self):
-         print("Found ", str(source.count(' ')), " number of spaces")
+         print("Found", str(source.count(' ')), "number of spaces")
+
+Characters.CountName(source)
+Characters.CountNum(source)
+Characters.CountAlNum(source)
+Characters.CountNonAlNum(source)
+Characters.CountSpace(source)
