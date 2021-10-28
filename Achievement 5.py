@@ -2,16 +2,36 @@ source = "Lorem ipsum doflor szit ametß, consqecytetu$r adipibsching elit, sed 
 
 class Characters:
     def CountName(self):
-        print()
+        x = source.count('M')+source.count('m')
+        print("Found ", str(x), " matches of the letter M")
 
     def CountNum(self):
-        print()
+        counter = 0
+        for n in source:  
+            if n.isdigit():      
+                counter +=1
+            else:    
+               pass       
+        print("Found ", str(counter), " matches of the digits")
 
     def CountAlNum(self):
-        print()
+        counter = 0
+        for n in source:  
+            if n.isalnum():      
+                counter +=1
+            else:    
+               pass       
+        print("Found ", str(counter), " matches of the alpha-numeric characters")
+
 
     def CountNonAlNum(self):
-        print()
+        counter = 0
+        for n in source:  
+            if n.isalnum():      
+                counter +=1
+            else:    
+               pass       
+        print("Found ", str(len(source)-counter), " matches of the non alpha-numeric characters")
 
     def CountSpace(self):
-        print()
+         print("Found ", str(source.count(' ')), " number of spaces")
