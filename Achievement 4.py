@@ -62,20 +62,27 @@ print ("Thank you. The chosen operation is " + op)
 while True:
     try: 
         x = float(input("Please pick the first number: "))
-        y = float(input("Please pick the second number: "))
 
     except ValueError:
         print ("Incorrect value was entered. Please try again.")
         continue
+    
+    while True:
+        try: 
+            y = float(input("Please pick the second number: "))
 
-    if op == "Addition":
-        Math.CalcAddition(op)
-    elif op == "Substraction":
-        Math.CalcSubstraction(op)
-    elif op == "Multiplication":
-        Math.CalcMultiplication(op)
-    elif op == "Division":
-        Math.CalcDivision(op)
-    elif op == "Modulus Division":
-        Math.CalcModDivision(op)
-    exit()
+        except ValueError:
+            print ("Incorrect value was entered. Please try again.")
+            continue
+
+        if op == "Addition":
+            Math.CalcAddition(op)
+        elif op == "Substraction":
+            Math.CalcSubstraction(op)
+        elif op == "Multiplication":
+            Math.CalcMultiplication(op)
+        elif op == "Division":
+            Math.CalcDivision(op)
+        elif op == "Modulus Division":
+            Math.CalcModDivision(op)
+        exit()
