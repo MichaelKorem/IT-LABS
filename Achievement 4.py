@@ -1,12 +1,18 @@
 class Math:
     def CalcAddition(self):
-        print(x+y)
+        add = x+y
+        add = format(add, ".2f")
+        print(add)
 
     def CalcSubstraction(self):
-        print(x-y)
+        sub = x-y
+        sub = format(sub, ".2f")
+        print(sub)
 
     def CalcMultiplication(self):
-        print(x*y)
+        mul = x*y
+        mul = format(mul, ".2f")
+        print(mul)
 
     def CalcDivision(self):
         div = x/y
@@ -14,7 +20,9 @@ class Math:
         print(div)
 
     def CalcModDivision(self):
-        print(x%y)
+        mod = x%y
+        mod = format(mod, ".2f")
+        print(mod)
 
 print("""What type of mathematical operation would you like to perform?
 Press 1 for Addition 
@@ -53,8 +61,8 @@ print ("Thank you. The chosen operation is " + op)
 
 while True:
     try: 
-        x = int(input("Please pick the first number: "))
-        y = int(input("Please pick the second number: "))
+        x = float(input("Please pick the first number: "))
+        y = float(input("Please pick the second number: "))
 
     except ValueError:
         print ("Incorrect value was entered. Please try again.")
