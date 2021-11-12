@@ -5,14 +5,12 @@ class Account:
     def Deposit(self):
         amount=float(input('Enter the amount you wish to deposit:'))
         self.balance+=amount
-        print("Your new balance is: %.2f" %self.balance + "$")
 
     def Withdraw(self):
         amount=float(input('Enter the amount you wish to withdraw:'))
         while (amount>0):
             if (amount<=self.balance):
                 self.balance=self.balance-amount
-                print("Your new balance is: %.2f" %self.balance + "$")
                 break
 
             elif (amount>self.balance):
