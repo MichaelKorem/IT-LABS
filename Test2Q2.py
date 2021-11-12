@@ -1,9 +1,8 @@
 class LargestValue:
     def __init__(self, name):
         self.name = name
-        self.numbers = []
     
-    def maxValue (self):
+    def maxValue ():
         while True:
             try:
                 n1 = float(input("Enter first number: "))
@@ -18,7 +17,10 @@ class LargestValue:
                     largest = n3
 
                 print("The largest number is", largest)
+                break
             
             except ValueError:
                 print ("Incorrect value was entered. Please try again.")
                 continue
+
+LargestValue.maxValue()
