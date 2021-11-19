@@ -46,5 +46,6 @@ Gallow = ["""
    ====="""]
 
 def RandomWord(WordList):
-     WordNum = random.randint(0, len(WordList)-1)
-     return WordList[WordNum]
+   WordNum = random.randint(0, len(WordList)-1)
+   return WordList[WordNum]
+print(RandomWord(WordList))
