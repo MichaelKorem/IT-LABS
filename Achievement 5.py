@@ -23,7 +23,6 @@ class Characters:
                pass       
         print("Found", str(counter), "matches of alphanumeric characters")
 
-
     def CountNonAlNum(self):
         counter = 0
         for n in source:  
