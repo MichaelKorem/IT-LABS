@@ -169,7 +169,7 @@ class Calculate:
         self.type = type
         self.discount = discount
     
-    def calcDiscount(self):
+    def calcDiscount():
         sytype = 0
         counter = ["Y", "y", "N", "n"]
         while sytype == 0:

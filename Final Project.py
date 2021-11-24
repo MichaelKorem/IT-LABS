@@ -71,3 +71,36 @@ The secret word is:
         for Letter in HiddenWord:
             print(Letter, end=" ")
         print()
+
+def LetsPlay(Guesses):
+    while True:
+        Guess = input("""
+Guess a single letter: """)
+        Guess = Guess.upper()
+        if len(Guess) != 1:
+            print("Please enter a single letter.")
+        elif Guess in Guesses:
+            print("You have already guessed that letter. Try again.")
+        elif Guess not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            print("Please enter a letter.")
+        else:
+            return Guess
+
+print("""
+ _   _   ___   _   _  _____ ___  ___  ___   _   _ 
+| | | | / _ \ | \ | ||  __ \|  \/  | / _ \ | \ | |
+| |_| |/ /_\ \|  \| || |  \/| .  . |/ /_\ \|  \| |
+|  _  ||  _  || . ` || | __ | |\/| ||  _  || . ` |
+| | | || | | || |\  || |_\ \| |  | || | | || |\  |
+\_| |_/\_| |_/\_| \_/ \____/\_|  |_/\_| |_/\_| \_/
+                                                  
+                                                  
+Welcome to HANGMAN Game!
+Your objective is to guess the secret word.
+You can guess only a single letter at a time.
+You can make up to 7 mistakes. And then you hang!
+Let’s begin!""")
+WrongGuess = ""
+CorrectGuess = ""
+ChosenWord = RandomWord(WordList)
+Finished = False
