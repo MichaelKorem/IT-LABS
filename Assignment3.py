@@ -1,249 +1,283 @@
-shirtprice = 0
-trouserprice = 0
-x = 0
-y = 0
-total = 0
-
 class Shirts:
-    def __init__(self, type, color, amount, price):
-        self.type = type
-        self.color = color
-        self.amount = amount
-        self.price = price
-    
-    def BuyShirts():
-        print ("Welcome to Abby’s Merchandizing!")
-        print("""What type of shirt would you like to order?
+    def __init__(self):
+        self.type = ""
+        self.color = ""
+        self.amount = 0
+        self.price = 0
+
+    def orderDetails(self):
+        print("""
+What type of shirt would you like to order?
 1. Polo - 9.99$ 2. T-shirt - 9.99$""")
 
         while True:
             try:
-                shirttype = int(input("Type 1 for Polo. Type 2 for T-shirt: "))
-                if shirttype == 1:
-                    shirttype = str("Polo")
-                    print ("Thank you. The chosen shirt type is " + shirttype)
+                selection = int(input("Type 1 for Polo. Type 2 for T-shirt: "))
+                if selection == 1:
+                    self.type = str("Polo")
+                    print("Thank you. The chosen shirt type is " + self.type)
                     break
-                elif shirttype == 2:
-                    shirttype = str("T-shirt")
-                    print ("Thank you. The chosen shirt type is " + shirttype)
-                    break
-                else:
-                    print ("Incorrect value was entered. Please try again.")
-                    continue
-
-            except ValueError:
-                print ("Incorrect value was entered. Please try again.")
-                continue
-
-        print("""What color of shirt would you like to order?
-1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
-        while True:
-            try: 
-                shirtcolour = int(input("Please pick the number adjacent to the preferred colour: "))
-                if shirtcolour ==  1:
-                    shirtcolour = "White"
-                    print ("Thank you. The chosen colour is " + shirtcolour)
-                    break
-
-                elif shirtcolour ==  2:
-                    shirtcolour = "Black"
-                    print ("Thank you. The chosen colour is " + shirtcolour)
-                    break
-
-                elif shirtcolour ==  3:
-                    shirtcolour = "Red"
-                    print ("Thank you. The chosen colour is " + shirtcolour)
-                    break
-
-                elif shirtcolour == 4:
-                    shirtcolour = "Blue"
-                    print ("Thank you. The chosen colour is " + shirtcolour)   
-                    break
-
-                elif shirtcolour ==  5:
-                    shirtcolour = "Green"
-                    print ("Thank you. The chosen colour is " + shirtcolour)
-                    break
-
-                elif shirtcolour ==  6:
-                    shirtcolour = "Yellow"
-                    print ("Thank you. The chosen colour is " + shirtcolour)
-                    break
-
-                else:
-                    print ("""Incorrect value was entered. Please try again.
-1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
-                    continue
-
-            except ValueError:
-                print ("""Incorrect value was entered. Please try again.
-1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
-                continue
-
-        while True:
-            try:
-                shirtamount = int(input("How many shirts would you like to order: "))
-                break
-            except ValueError:
-                print ("Incorrect value was entered. Please try again.")
-                continue
-            
-        float(shirtprice) = format((shirtamount*9.99), ".2f")
-
-class Pants:
-    def __init__(self, type, color, amount, price):
-        self.type = type
-        self.color = color
-        self.amount = amount
-        self.price = price
-    
-    def BuyPants():
-        print ("""What type of trousers would you like to order?
-1. Jeans - 14.99$ 2. Chino - 14.99$""")
-        while True:
-            try:    
-                trousertype = int(input("Type 1 for Jeans. Type 2 for Chino: "))
-
-                if trousertype ==  1:
-                    trousertype = "Jeans"
-                    print ("Thank you. The chosen trouser type is " + trousertype)
-                    break
-
-                elif trousertype ==  2:
-                    trousertype = "Chino"
-                    print ("Thank you. The chosen trouser type is " + trousertype)
-                    break
-
-                else:
-                    print ("Incorrect value was entered. Please try again.")
-                    continue
-
-            except ValueError:
-                print ("Incorrect value was entered. Please try again.")
-                continue
-
-        print ("""What color of trousers would you like to order?
-1. Blue 2. Black 3. Grey""")
-
-        while True:
-            try:   
-                trousercolour = int(input("Please pick the number adjacent to the preferred colour: "))
-
-                if trousercolour ==  1:
-                    trousercolour = "Blue"
-                    print ("Thank you. The chosen colour is " + trousercolour)
-                    break
-
-                elif trousercolour ==  2:
-                    trousercolour = "Black"
-                    print ("Thank you. The chosen colour is " + trousercolour)
-                    break
-
-                elif trousercolour ==  3:
-                    trousercolour = "Grey"
-                    print ("Thank you. The chosen color is " + trousercolour)
-                    break
-
-                else:
-                    print ("""Incorrect value was entered. Please try again.
-1. Blue 2. Black 3. Grey""")
-                    continue
-
-            except ValueError:
-                print ("""Incorrect value was entered. Please try again.
-1. Blue 2. Black 3. Grey""")
-                continue
-
-        while True:
-            try:
-                trouseramount = int(input("How many trousers would you like to order: "))
-                break
-            except ValueError:
-                print ("Incorrect value was entered. Please try again.")
-                continue
-
-        float(trouserprice) = format((trouseramount*14.99), ".2f")
-
-class Calculate:
-    def __init__(self, type, discount):
-        self.type = type
-        self.discount = discount
-    
-    def calcDiscount():
-        sytype = 0
-        counter = ["Y", "y", "N", "n"]
-        while sytype == 0:
-            sytype = input("Are you a senior citizen? Y/N ")
-
-            if sytype in counter:
-                break
-
-            else:
-                print("Incorrect value was entered. Please try again.")
-                sytype = 0
-                continue
-
-        if sytype == "y" or sytype == "Y":
-            sydiscountshirt = 0.1
-            sydiscounttrouser = 0.1
-            sytype = "Senior citizen"
-
-        else:
-            sytype = 0
-    
-            while sytype == 0:
-                sytype = input("Are you a student? Y/N ")
-
-                if sytype in counter:
+                elif selection == 2:
+                    self.type = str("T-shirt")
+                    print("Thank you. The chosen shirt type is " + self.type)
                     break
                 else:
                     print("Incorrect value was entered. Please try again.")
-                    sytype = 0
                     continue
 
-        if sytype == "y" or sytype == "Y":
-            sydiscountshirt = 0.1
-            sydiscounttrouser = 0.1
-            sytype = "Student"
+            except ValueError:
+                print("Incorrect value was entered. Please try again.")
+                continue
 
-    def calcTotal():
-        print ("""
+        print("""
+What color of shirt would you like to order?
+1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
+        while True:
+            try:
+                selection = int(input("Please pick the number adjacent to the preferred color: "))
+                if selection == 1:
+                    self.color = "White"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 2:
+                    self.color = "Black"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 3:
+                    self.color = "Red"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 4:
+                    self.color = "Blue"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 5:
+                    self.color = "Green"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 6:
+                    self.color = "Yellow"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                else:
+                    print("""Incorrect value was entered. Please try again.
+1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
+                    continue
+
+            except ValueError:
+                print("""Incorrect value was entered. Please try again.
+1. White 2. Black 3. Red 4. Blue 5. Green 6. Yellow""")
+                continue
+
+        while True:
+            try:
+                self.amount = int(input("""
+How many shirts would you like to order: """))
+                break
+            
+            except ValueError:
+                print("Incorrect value was entered. Please try again.")
+                continue
+
+        self.price = float(format((self.amount * 9.99), ".2f"))
+
+class Pants:
+    def __init__(self):
+        self.type = ""
+        self.color = ""
+        self.amount = 0
+        self.price = 0
+
+    def orderDetails(self):
+        print("""
+What type of pants would you like to order?
+1. Jeans - 14.99$ 2. Chino - 14.99$""")
+        while True:
+            try:
+                selection = int(input("Type 1 for Jeans. Type 2 for Chino: "))
+
+                if selection == 1:
+                    self.type = "Jeans"
+                    print("Thank you. The chosen pants type is " + self.type)
+                    break
+
+                elif selection == 2:
+                    self.type = "Chino"
+                    print("Thank you. The chosen pants type is " + self.type)
+                    break
+
+                else:
+                    print("Incorrect value was entered. Please try again.")
+                    continue
+
+            except ValueError:
+                print("Incorrect value was entered. Please try again.")
+                continue
+
+        print("""
+What color of pants would you like to order?
+1. Blue 2. Black 3. Grey""")
+
+        while True:
+            try:
+                selection = int(input("Please pick the number adjacent to the preferred color: "))
+
+                if selection == 1:
+                    self.color = "Blue"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 2:
+                    self.color = "Black"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                elif selection == 3:
+                    self.color = "Grey"
+                    print("Thank you. The chosen color is " + self.color)
+                    break
+
+                else:
+                    print("""Incorrect value was entered. Please try again.
+1. Blue 2. Black 3. Grey""")
+                    continue
+
+            except ValueError:
+                print("""Incorrect value was entered. Please try again.
+1. Blue 2. Black 3. Grey""")
+                continue
+
+        while True:
+            try:
+                self.amount = int(input("""
+How many pants would you like to order: """))
+                break
+            
+            except ValueError:
+                print("Incorrect value was entered. Please try again.")
+                continue
+
+        self.price = float(format((self.amount * 14.99), ".2f"))
+
+
+class Calculate:
+    def __init__(self, boughtshirts, boughtpants):
+        self.distypeshirt = ""
+        self.shirtdis = 0
+        self.distypepants = ""
+        self.pantdis = 0
+        self.boughtshirts = boughtshirts
+        self.boughtpants = boughtpants
+
+    def calcDiscount(self):
+        self.shirtdis = 0
+        self.pantdis = 0
+        counter = ["Y", "y", "N", "n"]
+
+        if self.boughtshirts.amount < 3 or self.boughtpants.amount < 3:
+            while True:
+                distype = input("""
+Are you a senior citizen? Y/N """)
+
+                if distype in counter:
+                    break
+
+                else:
+                    print("Incorrect value was entered. Please try again.")
+                    continue
+
+            if distype == "y" or distype == "Y":
+                self.shirtdis = 0.1
+                self.pantdis = 0.1
+                self.distypepants = "Senior citizen"
+                self.distypeshirt = "Senior citizen"
+
+            while distype == "n" or distype == "N":
+                distype = input("Are you a student? Y/N ")
+                
+                if distype == "y" or distype == "Y":
+                    self.shirtdis = 0.1
+                    self.pantdis = 0.1
+                    self.distypepants = "Student"
+                    self.distypeshirt = "Student"
+                
+                if distype in counter:
+                    break
+                else:
+                    print("Incorrect value was entered. Please try again.")
+                    continue
+
+        if self.boughtshirts.amount >= 3:
+            self.shirtdis = 0.15
+            self.distypeshirt = "Quantity"
+
+        if self.boughtpants.amount >= 3:
+            self.pantdis = 0.15
+            self.distypepants = "Quantity"
+
+    def calcTotal(self):
+        summary = 0
+        sum1 = 0
+        sum2 = 0
+        print("""
 Summary:
 _____________________________________________________________
 
-You have ordered """ + str(Shirts.amount) + " " + Shirts.color + " " + Shirts.type + " shirts and " + str(Pants.amount) + " " + Pants.color + " " + Pants.type + " trousers.")
-        total = float(Shirts.price) + float(Pants.price)
+You have ordered """ + str(self.boughtshirts.amount) + " " + self.boughtshirts.color + " "
+              + self.boughtshirts.type + " shirts and " + str(self.boughtpants.amount) + " "
+              + self.boughtpants.color + " " + self.boughtpants.type + " trousers.")
+        total = float(self.boughtshirts.price) + float(self.boughtpants.price)
         total = format(total, ".2f")
-        print ("Amount to pay before tax is: " + str(total) + "$")
+        print("Amount to pay before tax is: " + str(total) + "$")
 
-        if Shirts.amount >= 3:
-            qdiscountshirt = 0.15
-            sydiscountshirt = 0
+        if self.distypeshirt == self.distypepants:
+            summary = self.shirtdis * float(self.boughtshirts.price)
+            summary += self.pantdis * float(self.boughtpants.price)
+            valsummary = format(summary, ".2f")
+            print(str(self.distypeshirt) + " discount is: -" + str(valsummary) + "$")
 
-        if Pants.amount >= 3:
-            qdiscounttrouser = 0.15
-            sydiscounttrouser = 0
+        else:
+            if self.shirtdis > 0:
+                sum1 = self.shirtdis * float(self.boughtshirts.price)
+                valsum1 = format(sum1, ".2f")
+                print(self.distypeshirt + " discount is: -" + str(valsum1) + "$")
 
-        if qdiscountshirt > 0 or qdiscounttrouser > 0:
-            sum = qdiscountshirt * float(Shirts.price)
-            sum += qdiscounttrouser * float(Pants.price)
-            sum = format(sum, ".2f")
-            print ("Quantity discount is: -" + str(sum) + "$")
+            if self.pantdis > 0:
+                sum2 = self.pantdis * float(self.boughtpants.price)
+                valsum2 = format(sum2, ".2f")
+                print(self.distypepants + " discount is: -" + str(valsum2) + "$")
 
-        if sydiscountshirt > qdiscountshirt:
-            x = format((float(Shirts.price)*sydiscountshirt), ".2f")
-        if sydiscounttrouser > qdiscounttrouser:
-            y = format((float(Pants.price)*sydiscounttrouser), ".2f")
-
-        if sydiscountshirt > 0 or sydiscounttrouser > 0:
-            sum = float(x)+float(y)
-            print (Calculate.type + " discount is: -" + str(sum) + "$")
-
-        price = float(Shirts.price)*(1-qdiscountshirt-sydiscountshirt)+float(Pants.price)*(1-qdiscounttrouser-sydiscounttrouser)
-        hst = float(price)*0.13
-        sum = price+hst
-        price = format(price, ".2f")
+        price = float(self.boughtshirts.price + self.boughtpants.price - summary - sum1 - sum2)
+        hst = float(price) * 0.13
+        total = price + hst
         hst = format(hst, ".2f")
-        sum = format(sum, ".2f")
+        total = format(total, ".2f")
         print("HST is: " + str(hst) + "$")
-        print ("Amount to pay including HST is: " + str(sum) + "$")
+        print("Amount to pay including HST is: " + str(total) + "$")
+
+
+class Shop:
+
+    def Shopping(self):
+        print("""+-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|W|e|l|c|o|m|e| |t|o| |A|b|b|y|s| |M|e|r|c|h|a|n|d|i|z|i|n|g|!|
++-+-+-+-+-+-+-+ +-+-+ +-+-+-+-+-+ +-+-+-+-+-+-+-+-+-+-+-+-+-+-+""")
+
+        shirts = Shirts()
+        pants = Pants()
+
+        shirts.orderDetails()
+        pants.orderDetails()
+
+        calculate = Calculate(shirts, pants)
+        calculate.calcDiscount()
+        calculate.calcTotal()
+
+shop = Shop()
+shop.Shopping()
