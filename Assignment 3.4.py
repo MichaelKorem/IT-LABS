@@ -183,7 +183,7 @@ class Calculate:
         if self.boughtshirts.amount < 3 or self.boughtpants.amount < 3:
             while True:
                 distype = input("""
-Are you a Senior Citizen? Y/N """)
+Are you a senior citizen? Y/N """)
 
                 if distype in counter:
                     break
@@ -195,11 +195,11 @@ Are you a Senior Citizen? Y/N """)
             if distype == "y" or distype == "Y":
                 self.shirtdis = 0.1
                 self.pantdis = 0.1
-                self.distypepants = "Senior Citizen"
-                self.distypeshirt = "Senior Citizen"
+                self.distypepants = "Senior citizen"
+                self.distypeshirt = "Senior citizen"
 
             while distype == "n" or distype == "N":
-                distype = input("Are you a Student? Y/N ")
+                distype = input("Are you a student? Y/N ")
                 
                 if distype == "y" or distype == "Y":
                     self.shirtdis = 0.1
@@ -231,12 +231,12 @@ _____________________________________________________________
 
 You have ordered """ + str(self.boughtshirts.amount) + " " + self.boughtshirts.color + " "
               + self.boughtshirts.type + " shirts and " + str(self.boughtpants.amount) + " "
-              + self.boughtpants.color + " " + self.boughtpants.type + " pants.")
+              + self.boughtpants.color + " " + self.boughtpants.type + " trousers.")
         total = float(self.boughtshirts.price) + float(self.boughtpants.price)
         total = format(total, ".2f")
         print("Amount to pay before tax is: " + str(total) + "$")
 
-        if self.distypeshirt == self.distypepants and self.shirtdis > 0:
+        if self.distypeshirt == self.distypepants:
             summary = self.shirtdis * float(self.boughtshirts.price)
             summary += self.pantdis * float(self.boughtpants.price)
             valsummary = format(summary, ".2f")
