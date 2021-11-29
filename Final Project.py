@@ -104,3 +104,58 @@ WrongGuess = ""
 CorrectGuess = ""
 ChosenWord = RandomWord(WordList)
 Finished = False
+
+while True:
+    Interface(WrongGuess, CorrectGuess, ChosenWord)
+ 
+    Guess = LetsPlay(WrongGuess + CorrectGuess)
+ 
+    if Guess in ChosenWord:
+        print("""
+You are correct! The letter:""", Guess, "is in the secret word.""")
+        CorrectGuess = CorrectGuess + Guess
+ 
+        Victory = True
+        for i in range(len(ChosenWord)):
+            if ChosenWord[i] not in CorrectGuess:
+                Victory = False
+                break
+        if Victory:
+            print("""
+Well Done! The secret word is """ + ChosenWord)
+            print("""
+__  __ ____   __  __   _       __ ____ _   __ __
+\ \/ // __ \ / / / /  | |     / //  _// | / // /
+ \  // / / // / / /   | | /| / / / / /  |/ // / 
+ / // /_/ // /_/ /    | |/ |/ /_/ / / /|  //_/  
+/_/ \____/ \____/     |__/|__//___//_/ |_/(_)   
+                                                """)
+            Finished = True
+    else:
+        print("""
+Wrong guess! The letter: """ + Guess, "is not in the secret word.")
+        WrongGuess = WrongGuess + Guess
+
+        if len(WrongGuess) == 7:
+            Interface(WrongGuess, CorrectGuess, ChosenWord)
+            print(Gallow[len(WrongGuess)-1])
+            print("""
+You have run out of guesses! The word was """ + ChosenWord)
+            print("""
+#     # ####### #     #    #       #######  #####  ####### 
+ #   #  #     # #     #    #       #     # #     # #       
+  # #   #     # #     #    #       #     # #       #       
+   #    #     # #     #    #       #     #  #####  #####   
+   #    #     # #     #    #       #     #       # #       
+   #    #     # #     #    #       #     # #     # #       
+   #    #######  #####     ####### #######  #####  #######""")
+            Finished = True
+
+    if Finished:
+        if PlayAgain():
+            WrongGuess = ""
+            CorrectGuess = ""
+            Finished = False
+            ChosenWord = RandomWord(WordList)
+        else:
+            break
