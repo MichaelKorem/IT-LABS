@@ -1,8 +1,6 @@
 class Rectangle:
 
     def __init__(self):
-        self.length = 0
-        self.width = 0
         self.perimeter = 0
         self.area = 0
 
