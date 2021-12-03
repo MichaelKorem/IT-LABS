@@ -1,5 +1,5 @@
-from datetime import date, datetime
+import datetime
 
 now = datetime.datetime.now()
 
-print(now.strftime("%m:%d:%Y, %H:%M:%S"))
+print(now.strftime("%m:%d:%Y %H:%M:%S"))
