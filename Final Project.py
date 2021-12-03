@@ -85,6 +85,12 @@ Guess a single letter: """)
             print("Please enter a letter.")
         else:
             return Guess
+            
+def PlayAgain():
+        Again = input("""
+If you would you like to play again please type Y. Otherwise type any other key: """)
+        if Again in "Yy":
+            return Again
 
 print("""
  _   _   ___   _   _  _____ ___  ___  ___   _   _ 
@@ -98,7 +104,7 @@ print("""
 Welcome to HANGMAN Game!
 Your objective is to guess the secret word.
 You can guess only a single letter at a time.
-You can make up to 7 mistakes. And then you hang!
+You can make up to 6 mistakes. And then you hang!
 Let’s begin!""")
 WrongGuess = ""
 CorrectGuess = ""
