@@ -2,4 +2,4 @@ import datetime
 
 now = datetime.datetime.now()
 
-now = now.strftime("%m:%d:%Y")
+print(now.strftime("%m:%d:%Y %H:%M:%S"))
