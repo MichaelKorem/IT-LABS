@@ -1,19 +1,18 @@
 import re
 
 def replacetext(search_text,replace_text):
-    with open('D:\Folder1\SampleFile.txt','r+') as f:
+    with open('C:\PROG1783 Final Exam\PROG1783File2.txt','r+') as f:
 
         file = f.read()
-        file = re.sub(search_text, replace_text, file)
-
-        f.write(file)
+        file1 = re.sub(search_text, replace_text, file)
+    with open('C:\PROG1783 Final Exam\PROG1783File2.txt','w+') as f:
+        f.write(file1)
 
     return "Text replaced"
 
-search_text = "Baljeet"
-replace_text = "***Baljeet***"
+search_text = "Michael"
+replace_text = "********"
 
 replacetext(search_text,replace_text)
-#Not neccessary from here on----------------------------------
-file1 = open('D:\Folder1\SampleFile.txt', "r")
-print(file1.read())
+file = open('C:\PROG1783 Final Exam\PROG1783File2.txt', "r")
+print(file.read())
